@@ -7,11 +7,13 @@
   
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-        <class>br.gov.sp.fatec.avaliacao.entity.Aluno</class>
-        <class>br.gov.sp.fatec.avaliacao.entity.Professor</class>
-        <class>br.gov.sp.fatec.avaliacao.entity.Trabalho</class>
-        <class>br.gov.sp.fatec.avaliacao.entity.Usuario</class>
-        
+        <class>br.gov.sp.fatec.projetoweb.entity.Aluguel</class>
+        <class>br.gov.sp.fatec.projetoweb.entity.Item</class>
+        <class>br.gov.sp.fatec.projetoweb.entity.Pessoa</class>
+        <class>br.gov.sp.fatec.projetoweb.entity.Roupa</class>
+        <class>br.gov.sp.fatec.projetoweb.entity.Vendedor</class>
+        <class>br.gov.sp.fatec.projetoweb.entity.Cliente</class>
+        <class>br.gov.sp.fatec.projetoweb.entity.Calcado</class>
         <properties>
             <property name="javax.persistence.jdbc.driver"
                 value="com.mysql.jdbc.Driver" />

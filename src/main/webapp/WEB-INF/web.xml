@@ -13,5 +13,13 @@
     <servlet-name>mainServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
+  
+  <servlet>
+    <servlet-name>aluguelServlet</servlet-name>
+    <servlet-class>br.gov.sp.fatec.avaliacaoweb.controller.AluguelController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>alugueloServlet</servlet-name>
+    <url-pattern>/aluguel</url-pattern>
+  </servlet-mapping>
 </web-app>
