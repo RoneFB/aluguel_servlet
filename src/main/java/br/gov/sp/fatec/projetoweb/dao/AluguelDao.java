@@ -46,13 +46,13 @@ public class AluguelDao {
 	public void saveWithoutCommit(Aluguel aluguel) {
 		for(Roupa roupa: aluguel.getRoupas()){
 			if(roupa.getId() == null) {
-				roupaDao.save(roupa);
+				roupaDao.saveWithoutCommit(roupa);
 			}
 		}
 		if(aluguel.getCliente() != null && aluguel.getCliente().getId() == null) {
 			clienteDao.save(aluguel.getCliente());
 		}if(aluguel.getVendedor() != null && aluguel.getVendedor().getId() == null) {
-			vendedorDao.save(aluguel.getVendedor());
+			vendedorDao.saveWithoutCommit(aluguel.getVendedor());
 		}
 		
 		if(aluguel.getId() == null) {

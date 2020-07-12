@@ -1,0 +1,28 @@
+
+
+{"aluguel":{
+    "cliente":[{
+        "nome":"Rone Felipe Bento",
+        "email":"ronefelipe97@gmail.com",
+        "cpf":"138.245.296-21",
+        "idade":21,
+        "bairro":"José Verissimo",
+        "rua":"Av João de paula Cabral",
+        "numero":371,
+        "cidade":"Paraisópolis",
+        "telefone":"12981565932"}],
+
+    "vendedor":[{"nome":"Dito Benedito",
+        "email":"ditao@gmail.com",
+        "cpf":"134.586.748-52",
+        "senha":"123abc@@"}],
+    "roupa":[{"tipo":"camisa",
+        "cor":"Preto",
+        "sexo":"M",
+        "tamanho":"G"}],
+    "dataLocacao":"22/06/2020",
+    "dataRetirada":"26/06/2020",
+    "dataDevolucao":"11/07/2020",
+    "ajuste":"Nenhum"
+    }
+}

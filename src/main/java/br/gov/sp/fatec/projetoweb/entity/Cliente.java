@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="cli_cliente")
 @PrimaryKeyJoinColumn(name="pess_id")
@@ -17,7 +19,7 @@ import javax.persistence.Table;
 public class Cliente extends Pessoa{
 	
 
-	
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="cliente")
 	private Set<Aluguel> aluguel;
 	

@@ -10,16 +10,19 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "usu_usuario")
 @PrimaryKeyJoinColumn(name="pess_id")
 @AttributeOverride(name = "id", column = @Column(name = "usu_id"))
 public class Vendedor extends Pessoa{
 
-
+	@JsonIgnore
 	@Column(name="usu_senha")
 	private String senha;
-
+	
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="vendedor")
 	private Set<Aluguel> aluguel;
 
@@ -30,7 +33,7 @@ public class Vendedor extends Pessoa{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
+	
 	public Set<Aluguel> getAluguel() {
 		return aluguel;
 	}
