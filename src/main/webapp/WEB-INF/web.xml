@@ -52,4 +52,13 @@
     <servlet-name>aluguelServlet</servlet-name>
     <url-pattern>/aluguel</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>clienteServlet</servlet-name>
+    <servlet-class>br.gov.sp.fatec.projetoweb.controller.ClienteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>clienteServlet</servlet-name>
+    <url-pattern>/cliente</url-pattern>
+  </servlet-mapping>
 </web-app>

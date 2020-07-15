@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @AttributeOverride(name = "id", column = @Column(name = "usu_id"))
 public class Vendedor extends Pessoa{
 
-	@JsonIgnore
+	
 	@Column(name="usu_senha")
 	private String senha;
 	

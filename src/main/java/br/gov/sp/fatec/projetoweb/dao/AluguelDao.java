@@ -46,13 +46,13 @@ public class AluguelDao {
 	public void saveWithoutCommit(Aluguel aluguel) {
 		for(Roupa roupa: aluguel.getRoupas()){
 			if(roupa.getId() == null) {
-				roupaDao.saveWithoutCommit(roupa);
+				roupaDao.save(roupa);
 			}
 		}
 		if(aluguel.getCliente() != null && aluguel.getCliente().getId() == null) {
 			clienteDao.save(aluguel.getCliente());
 		}if(aluguel.getVendedor() != null && aluguel.getVendedor().getId() == null) {
-			vendedorDao.saveWithoutCommit(aluguel.getVendedor());
+			vendedorDao.save(aluguel.getVendedor());
 		}
 		
 		if(aluguel.getId() == null) {
@@ -78,6 +78,15 @@ public class AluguelDao {
 		}
 	}
 	
+	public Aluguel buscar(String id) {
+		String consulta = "select a from Aluguel a"
+				+ " where a.id = :id ";
+		TypedQuery<Aluguel> query = manager.createQuery(consulta, Aluguel.class);
+		query.setParameter("id", Long.valueOf(id));
+	
+		return query.getSingleResult();
+    }
+	
 	public List<Aluguel> filterAluguelByRoupa(String cor, String tamanho){
 		String consulta = "select a from Aluguel a"
 				+ " inner join a.roupas r on r.aluguel_roupas = a.id"
@@ -87,4 +96,17 @@ public class AluguelDao {
 		query.setParameter("tamanho", tamanho);
 		return query.getResultList();
 	}
+	
+	public void excluir(String id) throws RollbackException {
+        Aluguel trabalho = manager.find(Aluguel.class,Long.valueOf(id));
+        try {
+            manager.getTransaction().begin();
+            manager.remove(trabalho);
+            manager.getTransaction().commit();
+        }
+        catch(RollbackException e) {
+            manager.getTransaction().rollback();
+            throw e;
+        }
+    }
 }

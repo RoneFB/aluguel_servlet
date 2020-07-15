@@ -29,8 +29,8 @@ public class VendedorDao {
 	public void save(Vendedor vendedor) throws RollbackException {
 		try {
 			manager.getTransaction().begin();
-			manager.flush();
 			saveWithoutCommit(vendedor);
+			manager.flush();
 			manager.getTransaction().commit();
 		}catch(RollbackException e) {
 			manager.getTransaction().rollback();

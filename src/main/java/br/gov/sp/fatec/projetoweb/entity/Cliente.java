@@ -53,10 +53,6 @@ public class Cliente extends Pessoa{
 	}
 
 
-	public Cliente() {
-			super();
-		}
-
 
 	public Set<Aluguel> getAluguel() {
 		return aluguel;

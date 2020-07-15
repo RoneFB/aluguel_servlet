@@ -1,7 +1,5 @@
-
-
-{"aluguel":{
-    "cliente":[{
+{
+    "cliente":{
         "nome":"Rone Felipe Bento",
         "email":"ronefelipe97@gmail.com",
         "cpf":"138.245.296-21",
@@ -10,19 +8,18 @@
         "rua":"Av João de paula Cabral",
         "numero":371,
         "cidade":"Paraisópolis",
-        "telefone":"12981565932"}],
+        "telefone":"12981565932"},
 
-    "vendedor":[{"nome":"Dito Benedito",
+    	"vendedor":{"nome":"Dito Benedito",
         "email":"ditao@gmail.com",
         "cpf":"134.586.748-52",
-        "senha":"123abc@@"}],
-    "roupa":[{"tipo":"camisa",
+        "senha":"123abc@@"},
+    	"roupas":[{"tipo":"camisa",
         "cor":"Preto",
         "sexo":"M",
-        "tamanho":"G"}],
-    "dataLocacao":"22/06/2020",
-    "dataRetirada":"26/06/2020",
-    "dataDevolucao":"11/07/2020",
-    "ajuste":"Nenhum"
+        "tamanho":"G"}],  
+        "dataLocacao":"2020-06-26T18:36:41Z",
+    	"dataRetirada":"2020-06-28T18:36:41Z",
+    	"dataDevolucao":"2020-07-02T18:36:41Z",
+    	"ajuste":"Nenhum"
     }
-}

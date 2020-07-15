@@ -23,8 +23,8 @@ public class ClienteDao {
 		this.manager = manager;
 	}
 	
-	public Cliente searchById(Long id) {
-		return manager.find(Cliente.class, id);
+	public Cliente searchById(String id) {
+		return manager.find(Cliente.class, Long.valueOf(id));
 	}
 	
 	public void save(Cliente cliente) throws RollbackException {
@@ -55,7 +55,7 @@ public class ClienteDao {
 	}
 	
 	
-	public void excluir(Long id) throws RollbackException{
+	public void excluir(String id) throws RollbackException{
 		Cliente cliente = searchById(id);
 		try {
 			manager.getTransaction().begin();
