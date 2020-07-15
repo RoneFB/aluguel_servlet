@@ -1,4 +1,4 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/mineda/projeto-web)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://ronefb@bitbucket.org/ronefb/aluguel-projetoweb)
 
 # Projeto web Java em branco
 Este projeto utiliiza o tomcat7-plugin para subir um Tomcat na porta 8080.
