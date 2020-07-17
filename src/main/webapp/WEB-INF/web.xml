@@ -23,7 +23,7 @@
     </init-param>
     <init-param>
         <param-name>password</param-name>
-        <param-value>P@ass531</param-value>
+        <param-value>1234</param-value>
     </init-param>
     <init-param>
         <param-name>realm</param-name>

@@ -67,13 +67,27 @@ public class AuthFilter implements Filter{
 	                            // Se nao bate com configuracao retorna erro
 	                            if (!username.equals(_username) || 
 	                                    !password.equals(_password)) {
-	                                unauthorized(response, "Bad credentials");
+	                            	
+	                            	if(_username.equals("rone") && _password.equals("1234")) {
+	                            		if(request.getMethod().equals("DELETE") ||
+	                            				request.getMethod().equals("PATCH") || request.getMethod().equals("PUT")) {
+	                            			/*Erro 403 Não autorizado para o método*/
+	                            			forbidden(response, "Forbidden");
+	                            			return;
+	                            		}
+	                            		chain.doFilter(req, res);
+	                            	}else {
+	                            		unauthorized(response, "Bad credentials");
+	                            		return;
+	                            	}
+	                                
 	                            }
 	                            // Prossegue com a requisicao
 	                            chain.doFilter(req, res);
 	                        } else {
 	                            unauthorized(response, 
 	                                    "Invalid authentication token");
+	                            return;
 	                        }
 	                    } catch (UnsupportedEncodingException e) {
 	                        throw new Error("Couldn't retrieve authentication", e);
@@ -82,6 +96,7 @@ public class AuthFilter implements Filter{
 	            }
 	        } else {
 	            unauthorized(response);
+	            return;
 	        }
 		
 	}
@@ -90,6 +105,11 @@ public class AuthFilter implements Filter{
 	public void destroy() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	private void forbidden(HttpServletResponse response, String message) throws IOException {
+		response.setHeader("WWW-Authenticate", "Basic realm=\"" + realm + "\"");
+        response.sendError(403, message);
 	}
 	
 	private void unauthorized(HttpServletResponse response, String message) 
